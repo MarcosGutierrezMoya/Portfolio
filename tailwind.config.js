@@ -17,8 +17,12 @@ module.exports = {
     },
     extend: {
       backgroundImage:{
+        'laHuida': "url('https://img.itch.zone/aW1hZ2UvMTI2MjU1Ni84NDUyNzUwLmpwZw==/794x1000/8OxyT8.jpg')",
+        'timeWanderer': "url('https://img.itch.zone/aW1nLzU2OTc0NDkucG5n/315x250%23c/uJtp%2BL.png')",
         'fondoProjectR':"url('https://i.pinimg.com/originals/7b/e9/3e/7be93eab8555eda4b74b7b0cb9840164.jpg')",
         'fondoCrazyRacy': "url('https://i.pinimg.com/originals/83/70/e8/8370e8a8c5b9bc20fed994fbe1f6f46e.jpg')",
+        'tercios': "url('https://i.pinimg.com/564x/b3/52/d9/b352d94afb27323291732a299233414f.jpg')",
+        'cssProyects': "url('https://i.pinimg.com/564x/ff/73/bb/ff73bbb43e051f63aa16ef642c904988.jpg')",
       },
       keyframes: {
         'showUp': {

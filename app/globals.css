@@ -6,3 +6,9 @@
     padding: 0;
     margin: 0   ;
 }
+
+.active{
+    transition: width 1s ease-in-out;
+    width:20vw;
+    cursor:auto;
+}

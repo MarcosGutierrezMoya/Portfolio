@@ -76,7 +76,7 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
                 {answerChooseType ?
                     answers?.map((answer, i) => {
                         return (
-                            <div className='flex gap-4'>
+                            <div key={i} className='flex gap-4'>
                                 <input type="radio" name={`res`} id="" value={i} />
                                 <p>{answer}</p>
                             </div>

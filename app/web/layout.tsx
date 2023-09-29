@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter, Alef } from 'next/font/google'
+import { Aldrich } from 'next/font/google'
 
-const inter = Alef({ weight: "700", subsets: ['latin'] })
+const inter = Aldrich({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Web',
@@ -14,10 +14,8 @@ export default function VideogamesLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <section className={inter.className}>
-        {children}
-      </section>
-    </html>
+    <section className={`${inter.className} bg-gradient-to-b from-black to-sky-800`}>
+      {children}
+    </section>
   )
 }
