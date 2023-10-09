@@ -11,6 +11,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import { useAnswerNumber } from './context'
 
 type AnswersInterface = {
     answerChooseType: Boolean,
@@ -21,9 +22,39 @@ type AnswersInterface = {
     setCorrectQuestionNum: Dispatch<SetStateAction<number>>,
 }
 
+
 const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,questionNum,setCorrectQuestionNum }: AnswersInterface) => {
     const responseArea = useRef<any>()
     const [modalText,setModalText] = useState("")
+    const {answerNumber,setAnswerNumber} = useAnswerNumber();
+    console.log(answerNumber);
+    
+    function repeatQuestion() {
+        if (answerNumber >= 3) {
+            setQuestionNum(prev => prev + 1);
+            setAnswerNumber(0);
+        }
+    }
+
+    function checkAnswerNum() {
+        if (answerNumber < 3) {
+            responseArea.current.value = "";
+            if (answerNumber===2) {
+                setModalText(`Lo siento, no has acertado ninguna`);
+            }
+            else{
+                setModalText(`Te quedan ${3-(answerNumber+1)} intentos`);
+            }
+            setAnswerNumber(answerNumber+1); 
+            console.log("false",answerNumber);
+            
+        }
+        else{
+            console.log("true",answerNumber);
+            setModalText(`Bien hecho!`);
+            setAnswerNumber(3);
+        }
+    }
 
     function textAreaAnswer(e: any) {
         e.preventDefault();
@@ -31,6 +62,7 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
             if (e.target.res.value === correctAnswer?.toString()) {
                 setModalText("Respuesta correcta 👌");
                 setCorrectQuestionNum(prev=>prev+1);
+                setAnswerNumber(3);
             }
             else {
                 setModalText(`La respuesta correcta es: ${answers ? [correctAnswer ? correctAnswer : 0] : ""}`)
@@ -42,24 +74,27 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
                     if (responseArea.current.value.includes("escalera") || responseArea.current.value.includes("escaleras")) {
                         setModalText("Correcto!");
                         setCorrectQuestionNum(prev=>prev+1);
+                        setAnswerNumber(3);
                     } else {
-                        setModalText("Me temo que no es la respuesta correcta");
+                        checkAnswerNum();
                     }
                     break;
                 case 2:
                     if (responseArea.current.value.includes("ojos") || responseArea.current.value.includes("parpados")) {
                         setModalText("Efectivamente, lo primero es abrir los ojos");
                         setCorrectQuestionNum(prev=>prev+1);
+                        setAnswerNumber(3);
                     } else {
-                        setModalText("Me temo que no es la respuesta correcta");
+                        checkAnswerNum();
                     }
                     break;
                 case 4:
                     if (responseArea.current.value.includes("alfabetico") || responseArea.current.value.includes("alfabético") || responseArea.current.value.includes("alfabeticamente") || responseArea.current.value.includes("alfabéticamente")) {
                         setModalText("Eso es!! Están ordenados alfabéticamente 🥳");
                         setCorrectQuestionNum(prev=>prev+1);
+                        setAnswerNumber(3);
                     } else {
-                        setModalText("Me temo que no es la respuesta correcta");
+                        checkAnswerNum();
                     }
                     break;
             
@@ -83,7 +118,7 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
                         )
                     })
                     :
-                    <textarea className='border-2 border-solid border-white bg-transparent focus:outline-none p-3 placeholder-green-400/50z ' rows={4} cols={30} placeholder='Escribe una acción' ref={responseArea} />
+                    <textarea className='border-2 border-solid border-white bg-transparent focus:outline-none p-3 placeholder-green-400/50z ' rows={4} cols={30} placeholder='Escribe una respuesta' ref={responseArea} />
                 }
                 <AlertDialog>
                     <AlertDialogTrigger asChild>
@@ -98,7 +133,7 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
                         </AlertDialogHeader>
                         <AlertDialogFooter>
                             {/* <AlertDialogCancel>Cancel</AlertDialogCancel> */}
-                            <AlertDialogAction onClick={()=>{setQuestionNum(prev => prev + 1)}}>Continue</AlertDialogAction>
+                            <AlertDialogAction onClick={repeatQuestion}>Continue</AlertDialogAction>
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>

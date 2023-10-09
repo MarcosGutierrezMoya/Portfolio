@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Answers from './Answers'
+import AnswerContextProvider from './context';
 
 const Questions = () => {
     const [questionNum,setQuestionNum] = useState<number>(0);
@@ -25,10 +26,12 @@ const Questions = () => {
 
       if (questionNum < questions.length) {
           return (
+            <AnswerContextProvider>
               <article className=" text-green-500 px-12 py-8 flex flex-col gap-6 items-center animate-questions">
                   <h3>{(questionNum+1) +"/"+ questions.length +"-"+  questions[questionNum].question}</h3>
                   <Answers answerChooseType={questions[questionNum].answerChooseType} answers={questions[questionNum].answers} setQuestionNum={setQuestionNum} correctAnswer={questions[questionNum].correctAnswer} questionNum={questionNum} setCorrectQuestionNum={setCorrectQuestionNum} />
               </article>
+            </AnswerContextProvider>
           )
       }else{
         return(

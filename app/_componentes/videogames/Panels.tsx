@@ -6,6 +6,8 @@ type videos = {
 
 function Panels({setVideo}:videos) {
     const [panelActive, setPanelActive] = useState("")
+    const defaultStyle = "cursor-pointer h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000"
+
     function resize(e:any){
         let active = document.getElementsByClassName("active")[0];
         if (!e.target.classList.contains("active")) {
@@ -17,15 +19,15 @@ function Panels({setVideo}:videos) {
 
     return (
         <article className="flex justify-center ">
-            <div id="laHuida" className="cursor-pointer bg-laHuida h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000" onClick={resize} >
+            <div id="La Huida" className={`bg-laHuida ${defaultStyle}`} onClick={resize} >
             </div>
-            <div id="timeWanderer" className="cursor-pointer bg-timeWanderer h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000" onClick={resize} >
+            <div id="Time Wanderer" className={`bg-timeWanderer ${defaultStyle}`} onClick={resize} >
             </div>
-            <div id="Project_R" className="cursor-pointer bg-fondoProjectR h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000 active" onClick={resize} >
+            <div id="Project_R" className={`bg-fondoProjectR ${defaultStyle} active`} onClick={resize} >
             </div>
-            <div id="CrazyRacy" className="cursor-pointer bg-fondoCrazyRacy h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000" onClick={resize} >
+            <div id="CrazyRacy" className={`bg-fondoCrazyRacy ${defaultStyle}`} onClick={resize} >
             </div>
-            <div id="tercios" className="cursor-pointer bg-tercios h-64 w-[6vw] bg-cover rounded-[5rem] bg-center bg-no-repeat transition-all duration-1000" onClick={resize} >
+            <div id="Los tercios" className={`bg-tercios ${defaultStyle}`} onClick={resize} >
             </div>
         </article>
     )
