@@ -11,7 +11,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { useAnswerNumber } from './context'
+import { useGeneralContext } from './context'
 
 type AnswersInterface = {
     answerChooseType: Boolean,
@@ -26,8 +26,7 @@ type AnswersInterface = {
 const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,questionNum,setCorrectQuestionNum }: AnswersInterface) => {
     const responseArea = useRef<any>()
     const [modalText,setModalText] = useState("")
-    const {answerNumber,setAnswerNumber} = useAnswerNumber();
-    console.log(answerNumber);
+    const {answerNumber,setAnswerNumber} = useGeneralContext();
     
     function repeatQuestion() {
         if (answerNumber >= 3) {
@@ -118,7 +117,7 @@ const Answers = ({ answerChooseType, answers, setQuestionNum, correctAnswer,ques
                         )
                     })
                     :
-                    <textarea className='border-2 border-solid border-white bg-transparent focus:outline-none p-3 placeholder-green-400/50z ' rows={4} cols={30} placeholder='Escribe una respuesta' ref={responseArea} />
+                    <textarea className='border-2 border-solid border-green-800 bg-transparent focus:outline-none p-3 placeholder-green-400/50z text-green-600 placeholder:text-green-600' rows={4} cols={30} placeholder='Escribe una respuesta' ref={responseArea} />
                 }
                 <AlertDialog>
                     <AlertDialogTrigger asChild>

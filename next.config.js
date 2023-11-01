@@ -8,15 +8,27 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.icon-icons.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   env: {
-    NEXT_PUBLIC_FIREBASE_APIKEY: "AIzaSyDUuhzYkv_srlvGhamSdtsw7lxpGLGOJcE",
-    NEXT_PUBLIC_FIREBASE_AUTHDOMAIN: "portfolio-e6089.firebaseapp.com",
-    NEXT_PUBLIC_FIREBASE_PROJECTID: "portfolio-e6089",
-    NEXT_PUBLIC_FIREBASE_STORAGEBUCKET: "portfolio-e6089.appspot.com",
-    NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID: "120973533427",
-    NEXT_PUBLIC_FIREBASE_APPID: "1:120973533427:web:72d441146bbc2eb13dd786"
+    NEXT_PUBLIC_FIREBASE_APIKEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    NEXT_PUBLIC_FIREBASE_AUTHDOMAIN: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    NEXT_PUBLIC_FIREBASE_PROJECTID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    NEXT_PUBLIC_FIREBASE_STORAGEBUCKET: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    NEXT_PUBLIC_FIREBASE_APPID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   }
 }
 

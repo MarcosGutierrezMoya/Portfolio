@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Aldrich } from 'next/font/google'
+import AnswerContextProvider from './_componentes/context'
 
 const inter = Aldrich({ weight: "400", subsets: ['latin'] })
 
@@ -16,8 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-gradient-to-b from-black to-sky-700`}>
+      <body className={`${inter.className} min-h-screen bg-gradient-to-b from-black to-sky-950`}>
+      <AnswerContextProvider>
         {children}
+      </AnswerContextProvider>
       </body>
     </html>
   )

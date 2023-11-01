@@ -14,7 +14,7 @@ export default function VideogamesLayout({
   children: React.ReactNode
 }) {
   return (
-      <section className={`${inter.className} bg-gradient-to-b from-black to-sky-800`}>
+      <section className={`${inter.className}`}>
         {children}
       </section>
   )

@@ -8,7 +8,7 @@ const Questions = () => {
     const [correctQuestionNum,setCorrectQuestionNum] = useState<number>(0);
 
     const questions = [
-        {question:"¿Que pesa más, un kilo de plumas o de hierro?",
+        {question:"¿Qué pesa más, un kilo de plumas o de hierro?",
         answerChooseType: true,
         answers:["Plumas","Hierro","Pesan lo mismo"],
         correctAnswer:2},
@@ -27,7 +27,7 @@ const Questions = () => {
       if (questionNum < questions.length) {
           return (
             <AnswerContextProvider>
-              <article className=" text-green-500 px-12 py-8 flex flex-col gap-6 items-center animate-questions">
+              <article className=" text-green-400 px-12 py-8 flex flex-col gap-6 items-center animate-questions">
                   <h3>{(questionNum+1) +"/"+ questions.length +"-"+  questions[questionNum].question}</h3>
                   <Answers answerChooseType={questions[questionNum].answerChooseType} answers={questions[questionNum].answers} setQuestionNum={setQuestionNum} correctAnswer={questions[questionNum].correctAnswer} questionNum={questionNum} setCorrectQuestionNum={setCorrectQuestionNum} />
               </article>
@@ -35,7 +35,7 @@ const Questions = () => {
           )
       }else{
         return(
-            <article className=" text-green-500 px-12 py-8 flex items-center text-[4rem]">
+            <article className=" text-green-400 px-12 py-8 flex items-center text-[4rem]">
                 {correctQuestionNum<questions.length?
                     <h1 className='text-red-500'>{correctQuestionNum}</h1>
                     :

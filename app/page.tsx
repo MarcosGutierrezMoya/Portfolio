@@ -7,16 +7,18 @@ import Nav from "./_componentes/Nav";
 export default function Home() {
 
   return (
-    <main className="flex flex-col items-center justify-start gap-6 p-4 ">
-      <Nav webColor={false} gameColor={false} />
-      <section className="h-[36rem] flex flex-col justify-between items-center text-green-500">
-        <h1 className="animate-showUp text-[4rem]">Bienvenido al mundo de la lógica</h1>
-        <h3 className="animate-showUp text-[2rem]">¿Estás preparado para probar el poder de tu lógica?</h3>
-        <p className="animate-showUp" >Atrevete a realizar este pequeño test e intenta conseguir la mejor puntuación</p>
-        <Questions />
+    <div>
+      <main className="flex flex-col items-center justify-start p-4 h-screen">
+        <Nav webColor={false} gameColor={false} />
+        <section className="h-full flex flex-col justify-center items-center text-green-500">
+          <h1 className="animate-showUp text-[4rem]">Bienvenido al mundo de la lógica</h1>
+          <h3 className="animate-showUp text-[2rem]">¿Estás preparado para probar el poder de tu lógica?</h3>
+          <p className="animate-showUp" >Atrevete a realizar este pequeño test e intenta conseguir la mejor puntuación</p>
+          <Questions />
+        </section>
         <div className="h-2 bg-green-500 w-screen text-green-500"></div>
-      </section>
+      </main>
       <AboutMe />
-    </main>
+    </div>
   )
 }
