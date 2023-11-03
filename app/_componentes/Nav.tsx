@@ -25,16 +25,16 @@ const Nav = () => {
                 <section className='flex items-center gap-4  text-white'>
                     {videoGamesSection === "Videogames" ?
                         <Link href={"https://guicos.itch.io/"} target="_blank" className='flex items-center gap-2'>
-                            <Image height={25} width={50} src="https://static-00.iconduck.com/assets.00/itch-io-icon-2048x2048-i6hzclad.png" alt="github icon" className='h-8' />
+                            <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/itch-io-icon-2048x2048-i6hzclad.png" alt="github icon" className='h-8' />
                             <p className='text-[1.25rem]'>Itch.io</p>
                         </Link>
                         : <></>}
                     <Link href={"https://github.com/MarcosGutierrezMoya?tab=repositories"} target="_blank" className='flex items-center gap-2'>
-                        <Image height={25} width={50} src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" alt="github icon" className='h-8' />
+                        <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" alt="github icon" className='h-8' />
                         <p className='text-[1.25rem]'>Github</p>
                     </Link>
                     <Link href={"https://www.linkedin.com/in/marcos-gutierrez-moya/"} target="_blank" className='flex items-center gap-2'>
-                        <Image height={25} width={50} src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png" alt="github icon" className='h-8' />
+                        <Image height={25} width={35} src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png" alt="github icon" className='h-8' />
                         <p className='text-[1.25rem]'>Linkedin</p>
                     </Link>
                 </section>
