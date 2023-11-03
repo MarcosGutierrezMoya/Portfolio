@@ -29,7 +29,7 @@ const WebProyect = ({ params }: { params: { id: string } }) => {
       <Nav />
       {webData?.filter(data => data.id === params.id).map((project) => {
         return (
-          <article className='flex flex-col items-center'>
+          <article key={project.id} className='flex flex-col items-center'>
             <Link href={project.data.link} style={{ backgroundImage: `url('${project.url}.png')` }} className={`aspect-video w-[35vw] bg-no-repeat bg-cover block border-transparent border-[5px] border-solid hover:border-green-400`} target='_blank'/>
             <h1 className=' text-[1.7rem]'>{project.id}</h1>
             <h3>Descripción:</h3>
