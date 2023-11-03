@@ -1,10 +1,13 @@
 import AboutMe from "./_componentes/AboutMe";
 import Questions from "./_componentes/Questions";
 import Nav from "./_componentes/Nav";
+import { useGeneralContext } from "./_componentes/context";
 
 
 
 export default function Home() {
+  const { setVideoGamesSection } = useGeneralContext()
+  setVideoGamesSection("home");
 
   return (
     <div>

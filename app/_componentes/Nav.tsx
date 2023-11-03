@@ -20,7 +20,7 @@ const Nav = () => {
                     <Link href={"https://react-arena.vercel.app/"} target='_blank' className='text-[2rem] text-white' onMouseEnter={() => setModal(true)} onMouseLeave={() => setModal(false)}>
                     9<sup>3/4</sup>{modal && <article className={`bg-red-500 absolute top-[${mousePos.posY+100}px] left-[${mousePos.posX}px] w-[10%] mr-5 text-white text-sm`} onMouseLeave={() => setModal(false)}>Entre videojuegos y web hay... un juego en web</article>}
                     </Link>
-                    <Link href={"/web"} className={`text-[2rem] ${videoGamesSection !== "Videogames" ? `text-green-700` : `text-white`}`}>Web</Link>
+                    <Link href={"/web"} className={`text-[2rem] ${videoGamesSection === "web" ? `text-green-700` : `text-white`}`}>Web</Link>
                 </section>
                 <section className='flex items-center gap-4  text-white'>
                     {videoGamesSection === "Videogames" ?
