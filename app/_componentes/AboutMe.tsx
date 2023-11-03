@@ -12,31 +12,6 @@ const AboutMe = () => {
         <Image alt='react logo' className='relative left-[2rem] top-[60%] ' src="https://cdn1.iconfinder.com/data/icons/education-set-3-3/74/15-512.png" width={50} height={50} />
       </section>
       <section className='flex flex-col gap-4 items-center text-center w-screen aboutMeText'>
-        {/* <input type="file" onChange={(event: any) => {
-        const file = event.target.files[0];
-        const img = ref(storage, `${file.name}`);
-
-        const uploadTask = uploadBytesResumable(img, file);
-
-        uploadTask.on('state_changed',
-          (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
-            switch (snapshot.state) {
-              case 'paused':
-                console.log('Upload is paused');
-                break;
-              case 'running':
-                console.log('Upload is running');
-                break;
-            }
-          },
-          (error) => {
-            alert(error)
-          }
-        );
-
-      }} /> */}
         <h1 className='text-[5rem] text-orange-500'>Marcos Gutiérrez Moya</h1>
         <p>Empecé mi carrera como programador a mis 24 años cursando un grado superior de <b className='text-orange-600'>ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS</b> en la escuela de imagen y sonido <b>CES</b>. He hecho varios videojuegos que podéis encontrar en la pestaña de videojuegos del menú.</p>
         <p>Al acabar los estudios estuve en <b className='text-orange-600'>TIMELESS GAMES INC</b> trabajando como jefe de proyecto y desarrollador de unity. Después de buscar un tiempo encontré un grupo de personas con ganas de desarrollar su propio videojuego y montar una empresa. Me uní ellos y empezamos a desarrollar un juego de tipo hack'n slash. Al acabar ese juego empezamos a realizar uno nuevo de gestion de ejército.</p>
