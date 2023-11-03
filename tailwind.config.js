@@ -26,7 +26,7 @@ module.exports = {
       },
       keyframes: {
         'showUp': {
-          '0%': { opacity: '0', position:"relative", top:"10rem" },
+          '0%': { opacity: '0', top:"10rem" },
           '40%': { position:"relative", top:"10rem" },
           '60%': { position:"relative", top:"0rem" },
           '100%': { opacity: '1', position:"static" },

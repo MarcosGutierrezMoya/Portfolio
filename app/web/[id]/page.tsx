@@ -1,26 +1,43 @@
 'use client'
-import React from 'react'
+import Nav from '@/app/_componentes/Nav';
+import getWebData from '@/app/_componentes/web/webData';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react'
 
-const WebProyect = ({params}:{params:{id:string}}) => {
-  let description = "";
+type firebaseWebData = {
+  data: {
+    description: string,
+    link: string
+  },
+  id: string,
+  url: string
+}
 
-  switch (params.id) {
-    case "CssProjects":
-      description = "Varios proyectos de CSS con un poco de js";
-      break;
-  
-    default:
-      break;
-  }
+const WebProyect = ({ params }: { params: { id: string } }) => {
+
+  const [webData, setWebData] = useState<firebaseWebData[]>([]);
+
+  useEffect(() => {
+    getWebData().then(data => setWebData(data));
+
+  }, [])
 
 
   return (
-    <div className='flex flex-col items-center h-screen'>
+    <div className='flex flex-col items-center h-screen w-screen text-green-500'>
       <title>{params.id}</title>
-      <h1 className='text-white text-[1.7rem]'>{params.id}</h1>
-      <h3>Descripción:</h3>
-      <p className='text-white'>{description}</p>
-      {/* <Image /> */}
+      <Nav />
+      {webData?.filter(data => data.id === params.id).map((project) => {
+        return (
+          <article className='flex flex-col items-center'>
+            <Link href={project.data.link} style={{ backgroundImage: `url('${project.url}.png')` }} className={`aspect-video w-[35vw] bg-no-repeat bg-cover block border-transparent border-[5px] border-solid hover:border-green-400`} target='_blank'/>
+            <h1 className=' text-[1.7rem]'>{project.id}</h1>
+            <h3>Descripción:</h3>
+            <p className=''>{project.data.description}</p>
+
+          </article>
+        )
+      })}
     </div>
   )
 }

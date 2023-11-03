@@ -8,8 +8,8 @@ export default function Home() {
 
   return (
     <div>
-      <main className="flex flex-col items-center justify-start p-4 h-screen">
-        <Nav webColor={false} gameColor={false} />
+      <Nav/>
+      <main className="flex flex-col items-center justify-start h-screen">
         <section className="h-full flex flex-col justify-center items-center text-green-500">
           <h1 className="animate-showUp text-[4rem]">Bienvenido al mundo de la lógica</h1>
           <h3 className="animate-showUp text-[2rem]">¿Estás preparado para probar el poder de tu lógica?</h3>

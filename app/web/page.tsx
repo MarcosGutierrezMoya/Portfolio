@@ -7,7 +7,7 @@ export default function Web() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 text-green-500">
-      <Nav webColor={true} gameColor={false} />
+      <Nav/>
       <Projects/>
     </main>
   )

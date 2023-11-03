@@ -12,3 +12,9 @@
     width:20vw;
     cursor:auto;
 }
+
+.aboutMeText > p{
+    width: 90%;
+    font-size: 1.5rem;
+    color: rgb(251 146 60);
+}
