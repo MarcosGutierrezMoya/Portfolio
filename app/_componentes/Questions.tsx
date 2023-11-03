@@ -2,8 +2,12 @@
 import React, { useState } from 'react'
 import Answers from './Answers'
 import AnswerContextProvider from './context';
+import { useGeneralContext } from "../_componentes/context";
 
 const Questions = () => {
+  const { setVideoGamesSection } = useGeneralContext()
+  setVideoGamesSection("home");
+
     const [questionNum,setQuestionNum] = useState<number>(0);
     const [correctQuestionNum,setCorrectQuestionNum] = useState<number>(0);
 
