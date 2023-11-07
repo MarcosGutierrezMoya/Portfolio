@@ -19,7 +19,7 @@ function GamesVideos() {
     const timeWanderer = "dM_VZsWmGsU?si=SLXPbrkcs1j8uxvz";
     const Project_R = "I6s0tTGUkhA";
     const CrazyRacy = "d2KrO30XLDg";
-    const tercios = "aN4O7JW4bNo";
+    const tercios = "0kx5eu4qq7c";
     
     
     

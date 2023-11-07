@@ -2,18 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     padding: 0;
-    margin: 0   ;
+    margin: 0;
 }
 
-.active{
+.active {
     transition: width 1s ease-in-out;
-    width:20vw;
-    cursor:auto;
+    width: 20vw;
+    cursor: auto;
 }
 
-.aboutMeText > p{
+.activeBtn {
+    /* transition: all 1s ease-in-out;
+    width: 1.5vw;
+    height: 3vh; */
+    zoom: 2;
+    cursor: auto;
+}
+
+.aboutMeText>p {
     width: 90%;
     font-size: 1.5rem;
     color: rgb(251 146 60);

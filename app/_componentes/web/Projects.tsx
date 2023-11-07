@@ -7,7 +7,8 @@ import getWebData from './webData';
 type firebaseWebData = {
     data: {
         description: string,
-        link: string
+        link: string,
+        tools: string[],
     },
     id: string,
     url: string
