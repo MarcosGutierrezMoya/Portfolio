@@ -71,7 +71,7 @@ const Ruleta = () => {
                 <select onChange={(e) => {random(participantes,e) }} className="w-[50%]">
                     {participantes?.map((persona: Persona) => {
                         return (
-                            <option value={persona.nombre}>{persona.nombre}</option>
+                            <option key={persona.nombre} value={persona.nombre}>{persona.nombre}</option>
                         )
                     })}
                 </select>

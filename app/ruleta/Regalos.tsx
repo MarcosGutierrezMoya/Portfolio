@@ -32,9 +32,9 @@ const Regalos = ({registrado,regala}:{registrado:Persona|any,regala:string}) => 
             </section>
             <p className="text-[0.75rem] md:sm:text-xl">Podeis poner enlaces o el nombre de lo que queráis</p>
             <input type="text" name="" id="" className="px-2 py-1 text-[0.5rem] md:sm:text-[1rem]" onKeyDown={(e) => addPresent(e)} />
-            <ol className='list-decimal'>{lista?.map(present=>{
+            <ol className='list-decimal'>{lista?.map((present,i)=>{
                 return(
-                    <li>{present.includes("http")?<a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{present}</a>:present}</li>
+                    <li key={present+i}>{present.includes("http")?<a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{present}</a>:present}</li>
                 )
             })}</ol>
         </div>

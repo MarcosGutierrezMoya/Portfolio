@@ -33,7 +33,7 @@ const WebProyect = ({ params }: { params: { id: string } }) => {
       <Nav />
       {webData?.filter(data => data.id === params.id).map((project) => {
         return (
-          <section className='h-screen flex flex-col justify-around items-center p-8 gap-8'>
+          <section key={project.id} className='h-screen flex flex-col justify-around items-center p-8 gap-8'>
             <article>
               <Link href={project.data.link} style={{ backgroundImage: `url('${project.url}.png')` }} className={`aspect-video w-[35vw] bg-no-repeat bg-cover block border-transparent border-[5px] border-solid hover:border-green-400`} target='_blank' />
             </article>
@@ -47,7 +47,7 @@ const WebProyect = ({ params }: { params: { id: string } }) => {
                 <h3 className='text-[1.7rem]'>Herramientas:</h3>
                 {project.data.tools.map(tool => {
                   return (
-                    <p className='text-[1.3rem]'>{tool}</p>
+                    <p key={tool} className='text-[1.3rem]'>{tool}</p>
                   )
                 })}
               </div>
