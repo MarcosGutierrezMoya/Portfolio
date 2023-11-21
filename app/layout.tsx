@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-gradient-to-b from-black to-sky-950`}>
+      <body className={`${inter.className} bg-gradient-to-b from-black to-sky-950`}>
       <AnswerContextProvider>
         {children}
       </AnswerContextProvider>

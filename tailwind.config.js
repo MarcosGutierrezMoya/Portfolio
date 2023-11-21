@@ -8,14 +8,14 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          "mobile": "400px",
+        },
+      },
       backgroundImage:{
         'laHuida': "url('https://img.itch.zone/aW1hZ2UvMTI2MjU1Ni84NDUyNzUwLmpwZw==/794x1000/8OxyT8.jpg')",
         'timeWanderer': "url('https://img.itch.zone/aW1nLzU2OTc0NDkucG5n/315x250%23c/uJtp%2BL.png')",

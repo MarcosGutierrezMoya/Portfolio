@@ -20,7 +20,7 @@ const AboutMe = () => {
       <section>
         <Image alt='blender logo' className='relative right-9 top-[40%] ' src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/2503px-Blender_logo_no_text.svg.png" width={50} height={50} />
         <Image alt='unreal logo' className='relative right-[1rem] top-[55%] ' src="https://cdn2.unrealengine.com/ue-logo-stacked-unreal-engine-w-677x545-fac11de0943f.png" width={80} height={80} />
-        <Image alt='next logo' className='relative right-8 top-[65%] ' src="https://miro.medium.com/v2/resize:fit:1258/1*okiCUvTUJLtOqJv1dMzwpA.png" width={50} height={50} />
+        <Image alt='next logo' className='relative right-8 top-[65%] rounded-[60%] w-14 h-14' src="https://assets-global.website-files.com/61eff6b3236cf9057b6c1fac/635543691615050863a92f1f_nextjs-logo.png" width={50} height={50} />
       </section>
     </article>
   )

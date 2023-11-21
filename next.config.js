@@ -34,7 +34,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'miro.medium.com',
+        hostname: 'assets-global.website-files.com',
         port: '',
         pathname: '/**',
       },
