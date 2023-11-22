@@ -10,34 +10,43 @@ type Persona = {
 }
 
 
-const Regalos = ({registrado,regala}:{registrado:Persona|any,regala:string}) => {
-    const [lista,setLista] = useState<string[]>([]);
+const Regalos = ({ registrado, regala }: { registrado: Persona | any, regala: string }) => {
+    const [lista, setLista] = useState<string[]>([]);
+    const [enviado, setEnviado] = useState<boolean>(false);
 
-    function addPresent(e:any) {
+    function addPresent(e: any) {
         if (e.code == "Enter") {
-            setLista([...lista,e.target.value]);
+            setLista([...lista, e.target.value]);
             e.target.value = "";
         }
     }
-    console.log(registrado,regala);
+    console.log(registrado, regala);
     console.log(lista);
-    
-    
+
+    function eliminarRegalo(index:number) {
+        const newList = lista.filter((ele,i)=>i!==index);
+        setLista(newList);
+    }
+
 
     return (
-        <div className="flex flex-col gap-6">
-            <section className='flex gap-12'>
-                <h3 className="text-[1rem] md:sm:text-[2rem]">Regalos a pedir</h3>
-                <button onClick={()=>setFamilyData({nombre:registrado.nombre,regalos:lista,aRegalar:regala,leRegala:registrado.leRegala!==""?registrado.leRegala:""})} className='bg-blue-950/50 hover:bg-blue-900/75 border-green-500 border-2 border-solid text-[0.75rem] md:sm:text-[1.5rem] py-1 px-2'>Pedir regalos</button>
-            </section>
-            <p className="text-[0.75rem] md:sm:text-xl">Podeis poner enlaces o el nombre de lo que queráis</p>
-            <input type="text" name="" id="" className="px-2 py-1 text-[0.5rem] md:sm:text-[1rem]" onKeyDown={(e) => addPresent(e)} />
-            <ol className='list-decimal'>{lista?.map((present,i)=>{
-                return(
-                    <li key={present+i}>{present.includes("http")?<a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{present}</a>:present}</li>
+        <>
+        {enviado?
+        <p className='text-[2rem] text-red-800'>Información enviada</p>
+        :
+        <div className="flex flex-col gap-6 w-full md:sm:w-[50%]">
+            <p className="text-[0.9rem] md:sm:text-xl">Podéis poner enlaces de la pagina de compra o el nombre de lo que queráis como regalo.</p>
+            <p className="text-[0.9rem] underline md:sm:text-xl">Pulsa enter cuando hayas escrito un regalo para agregarlo.</p>
+            <input type="text" name="" id="" className="px-2 py-1 text-[0.5rem] md:sm:text-[1rem]" onKeyDown={(e) => addPresent(e)} placeholder='Pulsa enter para agregar un regalo'/>
+            <ol className='list-decimal'>{lista?.map((present, i) => {
+                return (
+                    <li key={present + i} className='flex justify-between max-w-[50%]'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{present}</a> : <p>{present}</p>}<button className='text-red-500' onClick={()=>eliminarRegalo(i)}>X</button></li>
                 )
             })}</ol>
+            <button onClick={() => {setEnviado(true);setFamilyData({ nombre: registrado.nombre, regalos: lista, aRegalar: regala, leRegala: registrado.leRegala !== "" ? registrado.leRegala : "" })}} className='bg-blue-950/50 hover:bg-blue-900/75 border-green-500 border-2 border-solid text-[0.75rem] md:sm:text-[1.5rem] py-1 px-2'>Pulsar después de registrar los regalos con la barra de arriba</button>
         </div>
+        }
+        </>
     )
 }
 

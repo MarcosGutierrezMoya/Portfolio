@@ -40,17 +40,32 @@ export async function getFamilyData() {
     return docDataAll;
 }
 export async function setFamilyData(data:Persona) {
-    console.log(data);
-    
-    await setDoc(doc(db, "ruleta", data.nombre), {
-        nombre:data.nombre,
-        regalos: data.regalos,
-        aRegalar: data.aRegalar,
-        leRegala: data.leRegala
-      });
-    await updateDoc(doc(db, "ruleta", data.aRegalar), {
-        leRegala: data.nombre
-      });
+    const familia = [] as Persona[];
+    let todos = 0;
+    getFamilyData().then(data=>familia.push(data))
+
+    if (familia) {
+        familia.forEach(element => {
+            if (element.leRegala !== "") {
+                todos++;
+            }
+        });
+        if (todos === familia.length) {
+            console.log("terminado");
+            
+        }
+        
+        await setDoc(doc(db, "ruleta", data.nombre), {
+            nombre:data.nombre,
+            regalos: data.regalos || [""],
+            aRegalar: data.aRegalar,
+            leRegala: data.leRegala
+          });
+        await updateDoc(doc(db, "ruleta", data.aRegalar), {
+            leRegala: data.nombre
+          });
+    }
+
 }
 
 export default getWebData
