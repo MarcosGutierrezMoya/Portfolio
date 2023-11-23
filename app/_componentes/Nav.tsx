@@ -1,18 +1,25 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useGeneralContext } from './context'
+import { getFoto } from './web/webData'
 
 const Nav = () => {
     const { videoGamesSection } = useGeneralContext()
     const [modal, setModal] = useState(false)
     const [mousePos, setMousePos] = useState({ posY: 0, posX: 0 })
+    const [fotoPerfil, setFotoPerfil] = useState<string>("");
+    
+    useEffect(() => {
+        getFoto().then(url => setFotoPerfil(url));
+    }, [])
+    
 
     return (
             <nav className='bg-black flex items-center justify-between gap-2 md:xl:gap-0 p-3 sticky top-0 w-screen'>
                 <Link href={"/"} className='flex items-center gap-2 text-white'>
-                    <Image src='https://media.licdn.com/dms/image/D4D03AQEUI108__rKgA/profile-displayphoto-shrink_400_400/0/1674665524926?e=1700697600&v=beta&t=ZEb1namajjsHuok7r7VBPuHwcYjxGlo6IUFQM2aH4hE' className='rounded-[50%] h-[1rem] md:sm:h-[3rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[3rem] md:xl:w-[5rem]' height={25} width={50} alt={"foto"} />
+                    <Image src={`${fotoPerfil}`} className='rounded-[50%] h-[1rem] md:sm:h-[3rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[3rem] md:xl:w-[5rem]' height={25} width={50} alt={"foto"} />
                     <h1 className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-2xl'>Marcos Gutiérrez Moya</h1>
                 </Link>
                 <section className='flex items-center gap-4 md:xl:gap-12'>

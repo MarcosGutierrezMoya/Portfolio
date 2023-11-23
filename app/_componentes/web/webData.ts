@@ -30,6 +30,10 @@ async function getWebData() {
     return arrayProjects;
 }
 getWebData();
+export async function getFoto() {
+    const storageRef = ref(storage, "gs://portfolio-e6089.appspot.com")
+    return getDownloadURL(ref(storageRef, `Web/foto.jpeg`)).then(url=>url);
+}
 
 export async function getFamilyData() {
     const docSnapAll = await getDocs(collection(db, "ruleta"))
