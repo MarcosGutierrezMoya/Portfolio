@@ -12,8 +12,8 @@ const AboutMe = () => {
         <Image alt='react logo' className='relative left-[2rem] top-[60%] ' src="https://cdn1.iconfinder.com/data/icons/education-set-3-3/74/15-512.png" width={50} height={50} />
       </section>
       <section className='flex flex-col gap-4 items-center text-center w-screen aboutMeText'>
-        <h1 className='text-[5rem] text-orange-500'>Marcos Gutiérrez Moya</h1>
-        <p>Empecé mi carrera como programador a mis 24 años cursando un grado superior de <b className='text-orange-600'>ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS</b> en la escuela de imagen y sonido <b>CES</b>. He hecho varios videojuegos que podéis encontrar en la pestaña de videojuegos del menú.</p>
+        <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[5rem] text-orange-500'>Marcos Gutiérrez Moya</h1>
+        <p className='text-[0.75rem] md:sm:text-[1.5rem] md:xl:text-[2rem]'>Empecé mi carrera como programador a mis 24 años cursando un grado superior de <b className='text-orange-600'>ANIMACIONES 3D, JUEGOS Y ENTORNOS INTERACTIVOS</b> en la escuela de imagen y sonido <b>CES</b>. He hecho varios videojuegos que podéis encontrar en la pestaña de videojuegos del menú.</p>
         <p>Al acabar los estudios estuve en <b className='text-orange-600'>TIMELESS GAMES INC</b> trabajando como jefe de proyecto y desarrollador de unity. Después de buscar un tiempo encontré un grupo de personas con ganas de desarrollar su propio videojuego y montar una empresa. Me uní ellos y empezamos a desarrollar un juego de tipo hack`n slash. Al acabar ese juego empezamos a realizar uno nuevo de gestion de ejército.</p>
         <p>Después de unos años de programar con C# quise ampliar mis conocimientos de programación y me formé en desarrollo web. Hice un bootcamp en <b className='text-orange-600'>GAMMATECH SCHOOL</b> aprendiendo a programar para web aprendiendo también otras formas de programar.</p>
       </section>
