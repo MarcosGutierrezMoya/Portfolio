@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Regalos from "./Regalos";
 import { getFamilyData } from "../_componentes/web/webData";
+import Link from "next/link";
 
 type Persona = {
     nombre: string,
@@ -20,10 +21,8 @@ const Ruleta = () => {
     function random(familia: Persona[] | any, e: any) {
         const rawNombre = participantes.find(el => el.nombre === e.target.value)
         const arrayFamilia = [] as Persona[];
-        let yo = {} as Persona;
         familia.forEach((element: Persona) => {
             if (element.leRegala == "" && element.nombre !== rawNombre?.nombre) {
-
                 arrayFamilia.push(element);
             }
             else {
@@ -54,10 +53,15 @@ const Ruleta = () => {
 
     useEffect(() => {
         getFamilyData().then(data => setParticipantes(data));
+        if (localStorage.getItem("yo")) {
+            const yo = JSON.parse(localStorage.getItem("yo")||"");
+            console.log(yo);
+            
+        }
     }, [])
 
     return (
-        <div className='h-screen w-screen text-green-500 flex flex-col items-center gap-4 md:sm:gap-14'>
+        <div className='h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-28'>
             <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[4rem] text-center'>Amigo invisible de la familia Gutiérrez</h1>
             {nombre ?
                 <>
@@ -75,6 +79,7 @@ const Ruleta = () => {
                         </section>
                         :
                         <>
+                            <Link href={"/ruleta/pedidos"} className='px-4 py-2 border-2 border-green-500 bg-blue-900/25 hover:bg-blue-900/75'>Cambiar tus regalos</Link>
                             <p className="pt-36 md:sm:pt-0 text-center p-2 text-[1.8rem] md:sm:text-[2.2rem]">Tu amigo invisible es {nombre.aRegalar}</p>
                             <ol className='list-decimal w-fit'>{nombreAmigo?.regalos.map((present, i) => {
                                 return (

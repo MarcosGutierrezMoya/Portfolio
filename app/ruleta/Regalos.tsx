@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { setFamilyData } from '../_componentes/web/webData'
 
 type Persona = {
@@ -15,19 +15,22 @@ const Regalos = ({ registrado, regala }: { registrado: Persona | any, regala: st
     const [enviado, setEnviado] = useState<boolean>(false);
 
     function addPresent(e: any) {
-        if (e.code == "Enter") {
+        if (e.keyCode == 13) {
             setLista([...lista, e.target.value]);
             e.target.value = "";
         }
     }
-    console.log(registrado, regala);
-    console.log(lista);
 
     function eliminarRegalo(index:number) {
         const newList = lista.filter((ele,i)=>i!==index);
         setLista(newList);
     }
 
+    useEffect(() => {
+        const yo = localStorage.getItem("yo")?JSON.parse(localStorage.getItem("yo")||""):localStorage.setItem("yo",JSON.stringify(registrado));
+        setEnviado(false);
+    }, [])
+    
 
     return (
         <>
