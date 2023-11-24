@@ -30,9 +30,11 @@ const Ruleta = () => {
             }
         });
 
+        localStorage.setItem("yo",JSON.stringify(rawNombre));
         setParticipantes(arrayFamilia);
         setNombre(rawNombre)
         mostrarRegalos(rawNombre?.aRegalar||"");
+
     }
 
     function setChoosenOne() {
@@ -54,7 +56,11 @@ const Ruleta = () => {
     useEffect(() => {
         getFamilyData().then(data => setParticipantes(data));
         if (localStorage.getItem("yo")) {
-            const yo = JSON.parse(localStorage.getItem("yo")||"");            
+            const yo = JSON.parse(localStorage.getItem("yo")||"");
+            if (yo.aRegalar !== "") {
+                setNombre(yo);         
+                mostrarRegalos(yo.aRegalar);
+            }
         }
     }, [])
 
