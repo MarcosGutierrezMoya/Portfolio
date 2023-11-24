@@ -54,7 +54,7 @@ const Pedidos = () => {
             {lista.length!==0?
             <ol className='list-decimal'>{lista?.map((present, i) => {
                 return (
-                    <li key={present + i} className='flex justify-between gap-4'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{present}</a> : <p className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.5rem]'>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
+                    <li key={present + i} className='flex justify-between gap-4'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500' href={present} target='_blank'>{present}</a> : <p className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.5rem]'>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
                     )
                 })}</ol>
                 :
