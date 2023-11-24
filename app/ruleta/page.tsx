@@ -54,18 +54,16 @@ const Ruleta = () => {
     useEffect(() => {
         getFamilyData().then(data => setParticipantes(data));
         if (localStorage.getItem("yo")) {
-            const yo = JSON.parse(localStorage.getItem("yo")||"");
-            console.log(yo);
-            
+            const yo = JSON.parse(localStorage.getItem("yo")||"");            
         }
     }, [])
 
     return (
-        <div className='h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-28'>
+        <div className='h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-14'>
             <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[4rem] text-center'>Amigo invisible de la familia Gutiérrez</h1>
             {nombre ?
-                <>
-                    <p className="text-[1.5rem] md:sm:text-[2rem] md:xl:text-[3rem]">Eres {nombre?.nombre}</p>
+                <div>
+                    <p className="text-[1.5rem] md:sm:text-[2rem] md:xl:text-[3rem] text-center">Eres {nombre?.nombre}</p>
                     {nombre.aRegalar === "" ?
                         <section className="flex flex-col gap-4 md:sm:flex-row justify-around p-8 w-full">
                             <div className='flex justify-center items-center h-full'>
@@ -88,7 +86,7 @@ const Ruleta = () => {
                             })}</ol>
                         </>
                     }
-                </>
+                </div>
                 :
                 <select onChange={(e) => { random(participantes, e) }} className="w-[75%] p-2 text-[0.5rem] md:sm:w-[50%] md:sm:text-[1rem]">
                     <option value="escoge">Dime cuál es tu nombre</option>
