@@ -62,6 +62,7 @@ const Ruleta = () => {
                 mostrarRegalos(yo.aRegalar);
             }
         }
+        
     }, [])
 
     return (

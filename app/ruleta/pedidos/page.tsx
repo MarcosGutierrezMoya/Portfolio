@@ -33,8 +33,8 @@ const Pedidos = () => {
         const rawNombre = participantes.find(el => el.nombre === yo?.nombre) || {} as Persona;
         if (e.keyCode == 13) {
             setLista([...lista, e.target.value]);
-            e.target.value = "";
             rawNombre.regalos = [...lista, e.target.value];
+            e.target.value = "";
             localStorage.setItem("yo",JSON.stringify(rawNombre))
         }
         setFamilyData(rawNombre)

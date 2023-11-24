@@ -48,6 +48,8 @@ export async function setFamilyData(data:Persona) {
     let todos = 0;
     getFamilyData().then(data=>familia.push(data))
 
+    console.log(data);
+    
     if (familia) {
         familia.forEach(element => {
             if (element.leRegala !== "") {
@@ -64,9 +66,6 @@ export async function setFamilyData(data:Persona) {
             regalos: data.regalos || [""],
             aRegalar: data.aRegalar,
             leRegala: data.leRegala
-          });
-        await updateDoc(doc(db, "ruleta", data.aRegalar), {
-            leRegala: data.nombre
           });
     }
 
