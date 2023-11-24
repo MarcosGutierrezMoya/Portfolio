@@ -50,7 +50,7 @@ const Pedidos = () => {
         <div className='h-screen w-screen text-green-500 flex flex-col justify-center items-center gap-4 md:sm:gap-14'>
             <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[4rem] text-center p-4'>Tus regalos, no tardes en cambiarlos o te comprarán algo que no quieres</h1>
             <Link href={"/ruleta"} className='px-4 py-2 border-2 border-green-500 bg-blue-900/25 hover:bg-blue-900/75'>Volver</Link>
-            <input type="text" name="" id="" className="px-2 py-1 text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.5rem]" onKeyDown={(e) => addPresent(e)} placeholder='Pulsa enter para agregar un regalo'/>
+            <input type="text" name="" id="" className="px-2 py-1 text-[1rem] md:sm:text-[1.5rem] md:xl:text-[1.5rem]" onKeyDown={(e) => addPresent(e)} placeholder='Pulsa enter para agregar un regalo'/>
             {lista.length!==0?
             <ol className='list-decimal'>{lista?.map((present, i) => {
                 return (
