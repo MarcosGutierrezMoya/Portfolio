@@ -63,7 +63,7 @@ const Ruleta = () => {
             <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[4rem] text-center'>Amigo invisible de la familia Gutiérrez</h1>
             {nombre ?
                 <div>
-                    <p className="text-[1.5rem] md:sm:text-[2rem] md:xl:text-[3rem] text-center">Eres {nombre?.nombre}</p>
+                    <p className="text-[1.5rem] md:sm:text-[2rem] md:xl:text-[3rem] text-center pb-6">Eres {nombre?.nombre}</p>
                     {nombre.aRegalar === "" ?
                         <section className="flex flex-col gap-4 md:sm:flex-row justify-around p-8 w-full">
                             <div className='flex justify-center items-center h-full'>
@@ -76,15 +76,15 @@ const Ruleta = () => {
                             <Regalos registrado={nombre} regala={yaElegidos[0]?.nombre} />
                         </section>
                         :
-                        <>
+                        <div className="flex flex-col items-center justify-center gap-6">
                             <Link href={"/ruleta/pedidos"} className='px-4 py-2 border-2 border-green-500 bg-blue-900/25 hover:bg-blue-900/75'>Cambiar tus regalos</Link>
-                            <p className="pt-36 md:sm:pt-0 text-center p-2 text-[1.8rem] md:sm:text-[2.2rem]">Tu amigo invisible es {nombre.aRegalar}</p>
+                            <p className="md:sm:pt-0 text-center p-2 text-[1.8rem] md:sm:text-[2.2rem]">Tu amigo invisible es {nombre.aRegalar}</p>
                             <ol className='list-decimal w-fit'>{nombreAmigo?.regalos.map((present, i) => {
                                 return (
                                     <li key={present + i} className='flex justify-between text-[1.5rem] md:sm:text-[2rem]'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem]' href={present} target='_blank'>{i+1}. {present}</a> : <p>{i+1}. {present}</p>}</li>
                                 )
                             })}</ol>
-                        </>
+                        </div>
                     }
                 </div>
                 :
