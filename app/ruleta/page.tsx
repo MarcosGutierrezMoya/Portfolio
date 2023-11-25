@@ -47,18 +47,21 @@ const Ruleta = () => {
     }
 
     function mostrarRegalos(nombreDeAmigo:string) {
-        const person = participantes.find(p=>p.nombre===nombreDeAmigo)
-        console.log(nombreDeAmigo);
+        const person = participantes.filter(p=>p.nombre===nombreDeAmigo)
         
-        setNombreAmigo(person);
+        setNombreAmigo(person[0]);
     }
 
     useEffect(() => {
-        getFamilyData().then(data => setParticipantes(data));
+        getFamilyData().then(data => setParticipantes(data));        
+    }, [])
+
+    useEffect(() => {
         if (localStorage.getItem("yo")) {
             const yo = JSON.parse(localStorage.getItem("yo")||"");
             if (yo.aRegalar !== "") {
                 setNombre(yo);         
+                
                 mostrarRegalos(yo.aRegalar);
             }
             else{
@@ -66,7 +69,8 @@ const Ruleta = () => {
             }
         }
         
-    }, [])
+    }, [participantes])
+    
 
     return (
         <div className='h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-14'>
