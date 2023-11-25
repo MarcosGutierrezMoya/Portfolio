@@ -59,7 +59,8 @@ const Ruleta = () => {
     useEffect(() => {
         if (localStorage.getItem("yo")) {
             const yo = JSON.parse(localStorage.getItem("yo")||"");
-            if (yo.aRegalar !== "") {
+            const nuevoYo = participantes.find(p=>p.nombre === yo.nombre);
+            if (nuevoYo?.aRegalar !== "") {
                 setNombre(yo);         
                 
                 mostrarRegalos(yo.aRegalar);
