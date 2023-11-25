@@ -59,6 +59,9 @@ const Ruleta = () => {
     useEffect(() => {
         if (localStorage.getItem("yo")) {
             const yo = JSON.parse(localStorage.getItem("yo")||"");
+            if (yo.nombre === "") {
+                localStorage.removeItem("yo");
+            }
             const nuevoYo = participantes.find(p=>p.nombre === yo.nombre);
             if (nuevoYo?.aRegalar !== "") {
                 setNombre(yo);         
@@ -66,11 +69,12 @@ const Ruleta = () => {
                 mostrarRegalos(yo.aRegalar);
             }
             else{
-                localStorage.removeItem("yo")
+                console.log("lo");
+                localStorage.removeItem("yo");
                 setNombre(undefined);
             }
         }
-        
+
     }, [participantes])
     
 
