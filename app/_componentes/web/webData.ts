@@ -67,6 +67,9 @@ export async function setFamilyData(data:Persona) {
             aRegalar: data.aRegalar,
             leRegala: data.leRegala
           });
+        await updateDoc(doc(db,"ruleta",data.aRegalar),{
+            leRegala:data.nombre
+        })
     }
 
 }
