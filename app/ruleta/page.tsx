@@ -66,7 +66,7 @@ const Ruleta = () => {
                 mostrarRegalos(yo.aRegalar);
             }
             else{
-                localStorage.setItem("yo",JSON.stringify({regalos:[],nombre:"",aRegalar:"",leRegala:""} as Persona))
+                localStorage.removeItem("yo")
                 setNombre(undefined);
             }
         }
