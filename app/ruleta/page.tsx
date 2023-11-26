@@ -101,7 +101,7 @@ const Ruleta = () => {
                             <p className="md:sm:pt-0 text-center p-2 text-[1.8rem] md:sm:text-[2.2rem]">Tu amigo invisible es {nombre.aRegalar}</p>
                             <ol className='list-decimal w-fit'>{nombreAmigo?.regalos.map((present, i) => {
                                 return (
-                                    <li key={present + i} className='flex justify-between text-[1.5rem] md:sm:text-[2rem] flex-wrap'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500' href={present} target='_blank'>{i+1}. {present}</a> : <p>{i+1}. {present}</p>}</li>
+                                    <li key={present + i} className='flex justify-between text-[1.5rem] md:sm:text-[2rem]'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500 flex flex-wrap' href={present} target='_blank'>{i+1}. {present}</a> : <p>{i+1}. {present}</p>}</li>
                                 )
                             })}</ol>
                         </div>
