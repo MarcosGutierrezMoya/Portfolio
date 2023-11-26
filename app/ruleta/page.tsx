@@ -80,7 +80,7 @@ const Ruleta = () => {
                 </div>
                 :
                 <select onChange={(e) => { random(e) }} className="w-[75%] p-2 text-[0.8rem] md:sm:w-[50%] md:sm:text-[1.2rem]">
-                    <option value="escoge">"Dime cuál es tu nombre"</option>
+                    <option value="escoge">Dime cuál es tu nombre</option>
                     {participantes?.map((persona: Persona) => {
                         return (
                             <option key={persona.nombre} value={persona.nombre}>{persona.nombre}</option>
