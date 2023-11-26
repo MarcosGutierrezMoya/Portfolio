@@ -43,7 +43,7 @@ const Regalos = ({ registrado, regala }: { registrado: Persona | any, regala: st
                     <input type="text" name="" id="" className="px-2 py-1 text-[1rem] md:sm:text-[1.5rem]" onKeyDown={(e) => addPresent(e)} placeholder='Pulsa enter para agregar un regalo' />
                     <ol className='list-decimal'>{lista?.map((present, i) => {
                         return (
-                            <li key={present + i} className='flex justify-between gap-4 max-w-[50%]'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500' href={present} target='_blank'>{present}</a> : <p>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
+                            <li key={present + i} className='flex justify-between gap-4 max-w-[50%]'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500 w-screen p-4' href={present} target='_blank'>{present}</a> : <p>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
                         )
                     })}</ol>
                     <button onClick={() => {
