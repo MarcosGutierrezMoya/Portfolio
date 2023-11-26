@@ -30,10 +30,10 @@ const Ruleta = () => {
             }
         });
 
-        localStorage.setItem("yo",JSON.stringify(rawNombre));
         setParticipantes(arrayFamilia);
         setNombre(rawNombre)
         mostrarRegalos(rawNombre?.aRegalar||"");
+        localStorage.setItem("yo",JSON.stringify(rawNombre));
 
     }
 
@@ -53,12 +53,12 @@ const Ruleta = () => {
     }
 
     useEffect(() => {
-        getFamilyData().then(data => setParticipantes(data));        
+        getFamilyData().then(data => setParticipantes(data));
     }, [])
 
     useEffect(() => {
         if (localStorage.getItem("yo")) {
-            const yo = JSON.parse(localStorage.getItem("yo")||"");
+            const yo = JSON.parse(localStorage.getItem("yo")||"")||{} as Persona;
             if (yo.nombre === "") {
                 localStorage.removeItem("yo");
             }
@@ -109,7 +109,7 @@ const Ruleta = () => {
                 </div>
                 :
                 <select onChange={(e) => { random(participantes, e) }} className="w-[75%] p-2 text-[0.5rem] md:sm:w-[50%] md:sm:text-[1rem]">
-                    <option value="escoge">Dime cuál es tu nombre</option>
+                    <option value="escoge">{participantes.length!==0?"Dime cuál es tu nombre":"No está conectando a la base de datos"}</option>
                     {participantes?.map((persona: Persona) => {
                         return (
                             <option key={persona.nombre} value={persona.nombre}>{persona.nombre}</option>
