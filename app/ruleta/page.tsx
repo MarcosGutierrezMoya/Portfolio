@@ -59,7 +59,7 @@ const Ruleta = () => {
     
 
     return (
-        <div className='h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-14'>
+        <div className='min-h-screen w-screen text-green-500 flex flex-col pt-12 items-center gap-4 md:sm:gap-14'>
             <h1 className='text-[1.5rem] md:sm:text-[2rem] md:xl:text-[4rem] text-center'>Amigo invisible de la familia Gutiérrez</h1>
             {nombre !== undefined ?
                 <div>
