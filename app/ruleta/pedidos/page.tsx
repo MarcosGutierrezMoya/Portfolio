@@ -33,8 +33,8 @@ const Pedidos = () => {
         const rawNombre = participantes.find(el => el.nombre === yo?.nombre) || {} as Persona;
         if (e.keyCode == 13) {
             setLista([...lista, e.target.value]);
-            e.target.value = "";
             rawNombre.regalos = [...lista, e.target.value];
+            e.target.value = "";
             localStorage.setItem("yo",JSON.stringify(rawNombre))
         }
         setFamilyData(rawNombre)
@@ -54,7 +54,7 @@ const Pedidos = () => {
             {lista.length!==0?
             <ol className='list-decimal'>{lista?.map((present, i) => {
                 return (
-                    <li key={present + i} className='flex justify-between gap-4'>{present.includes("http") ? <a className='underline cursor-pointer text-[0.5rem] md:sm:text-[1rem] text-sky-500' href={present} target='_blank'>{present}</a> : <p className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.5rem]'>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
+                    <li key={present + i} className='flex justify-between gap-4'>{present.includes("http") ? <a className='underline cursor-pointer text-[1rem] md:sm:text-[1.5rem] text-sky-500' href={present} target='_blank'>{present}</a> : <p className='text-[1rem] md:sm:text-[1.5rem] md:xl:text-[1.5rem]'>{present}</p>}<button className='text-red-500' onClick={() => eliminarRegalo(i)}>X</button></li>
                     )
                 })}</ol>
                 :
