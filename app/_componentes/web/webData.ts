@@ -13,26 +13,29 @@ type Persona = {
 async function getWebData() {
 
     const docSnap = await getDocs(collection(db, "web"))
-    const storageRef = ref(storage, "gs://portfolio-e6089.appspot.com")
+    const storageRef = ref(storage, "gs://portfolio-3be41.appspot.com")
     const docData: any = []
     docSnap.forEach((doc) => {
         docData.push({ data: doc.data(), id: doc.id })
     });
-    const arrayProjects: any = await Promise.all(docData.map((doc: any) => {
-        return getDownloadURL(ref(storageRef, `Web/${doc.id}.png`))
-            .then((url) => {
-                return { url, ...doc }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+    const arrayProjects: any = await Promise.all(docData.map(async (doc: any) => {
+        try {
+            const url = await getDownloadURL(ref(storageRef, `Web/${doc.id}.png`));
+            return { url, ...doc };
+        } catch (error) {
+            console.error(error);
+        }
     }))
     return arrayProjects;
 }
 getWebData();
 export async function getFoto() {
-    const storageRef = ref(storage, "gs://portfolio-e6089.appspot.com")
-    return getDownloadURL(ref(storageRef, `Web/foto.jpeg`)).then(url=>url);
+    const storageRef = ref(storage, "gs://portfolio-3be41.appspot.com")
+    console.log("dentro");
+    
+    return getDownloadURL(ref(storageRef, `Web/foto.jpg`)).then(url=>url).catch((error) => {
+        console.error('Error getting download URL', error);
+      });
 }
 
 export async function getFamilyData() {
