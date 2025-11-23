@@ -27,7 +27,7 @@ const Projects = () => {
     
 
     return (
-        <div className='flex flex-col gap-5 pt-5'>
+        <div className='flex flex-col gap-5 pt-5 w-full'>
             {webData.map((project, i) => {
                 return (
                     <article key={project.id} className={`flex ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"} justify-around items-center w-full h-[40vh]`}>
