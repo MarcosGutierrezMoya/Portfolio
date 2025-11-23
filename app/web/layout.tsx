@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Aldrich } from 'next/font/google'
-import { AuthProvider } from '../context/AuthContext';
 
 const inter = Aldrich({ weight: "400", subsets: ['latin'] })
 
@@ -16,9 +15,7 @@ export default function VideogamesLayout({
 }) {
   return (
     <section className={`${inter.className}`}>
-      <AuthProvider>
-        {children}
-      </AuthProvider>
+      {children}
     </section>
   )
 }

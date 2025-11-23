@@ -32,7 +32,7 @@ const Nav = () => {
                 <section className='flex items-center gap-1 md:xl:gap-4  text-white'>
                     {videoGamesSection === "Videogames" ?
                         <Link href={"https://guicos.itch.io/"} target="_blank" className='flex items-center gap-2'>
-                            <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/itch-io-icon-2048x2048-i6hzclad.png" alt="github icon" className='h-[1rem] sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] sm:w-[3rem] md:xl:w-[5rem]' />
+                            <Image height={25} width={35} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRevDsA6VWkG7ijDmn4j7ERbmqNBf1AGlcWKw&s" alt="Itch.io icon" className='rounded-[50%] h-[1rem] sm:h-[2.5rem] md:xl:h-[4rem] w-[1rem] sm:w-[3rem] md:xl:w-[4rem]' />
                             <p className='text-[1.25rem]'>Itch.io</p>
                         </Link>
                         : <></>}
