@@ -17,9 +17,9 @@ const Nav = () => {
     
 
     return (
-            <nav className='bg-black flex items-center justify-between gap-2 md:xl:gap-0 p-3 sticky top-0 w-screen'>
+            <nav className='bg-black flex items-center justify-between gap-2 md:xl:gap-0 p-3 sticky top-0 w-full'>
                 <Link href={"/"} className='flex items-center gap-2 text-white'>
-                    <Image src={`${fotoPerfil}`} className='rounded-[50%] h-[1rem] md:sm:h-[3rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[3rem] md:xl:w-[5rem]' height={25} width={50} alt={"foto"} />
+                    <Image src={`${fotoPerfil}`} className='rounded-[100%] h-[2rem] sm:h-[2.5rem] md:h-[5rem] w-[2rem] sm:w-[3rem] md:w-[4.5rem]' height={20} width={60} alt={"foto"} />
                     <h1 className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-2xl'>Marcos Gutiérrez Moya</h1>
                 </Link>
                 <section className='flex items-center gap-4 md:xl:gap-12'>
@@ -32,16 +32,16 @@ const Nav = () => {
                 <section className='flex items-center gap-1 md:xl:gap-4  text-white'>
                     {videoGamesSection === "Videogames" ?
                         <Link href={"https://guicos.itch.io/"} target="_blank" className='flex items-center gap-2'>
-                            <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/itch-io-icon-2048x2048-i6hzclad.png" alt="github icon" className='h-[1rem] md:sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[3rem] md:xl:w-[5rem]' />
+                            <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/itch-io-icon-2048x2048-i6hzclad.png" alt="github icon" className='h-[1rem] sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] sm:w-[3rem] md:xl:w-[5rem]' />
                             <p className='text-[1.25rem]'>Itch.io</p>
                         </Link>
                         : <></>}
-                    <Link href={"https://github.com/MarcosGutierrezMoya?tab=repositories"} target="_blank" className='flex items-center gap-2'>
-                        <Image height={25} width={35} src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" alt="github icon" className='h-[1rem] md:sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[2.5rem] md:xl:w-[5rem]' />
+                    <Link href={"https://github.com/MarcosGutierrezMoya?tab=repositories"} target="_blank" className='flex items-center md:gap-2'>
+                        <Image height={45} width={50} src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="github icon" className='rounded-[50%] h-[1rem] sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] sm:w-[3rem] md:xl:w-[5rem]' />
                         <p className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.25rem]'>Github</p>
                     </Link>
-                    <Link href={"https://www.linkedin.com/in/marcos-gutierrez-moya/"} target="_blank" className='flex items-center gap-2'>
-                        <Image height={25} width={35} src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png" alt="github icon" className='h-[1rem] md:sm:h-[2.5rem] md:xl:h-[5rem] w-[1rem] md:sm:w-[2.5rem] md:xl:w-[5rem]' />
+                    <Link href={"https://www.linkedin.com/in/marcos-gutierrez-moya/"} target="_blank" className='flex items-center md:gap-2'>
+                        <Image height={25} width={40} src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png" alt="github icon" className='rounded-[50%] h-[1rem] sm:h-[2.5rem] md:xl:h-[4.2rem] w-[1rem] sm:w-[3rem] md:xl:w-[4.2rem]' />
                         <p className='text-[0.5rem] md:sm:text-[1rem] md:xl:text-[1.25rem]'>Linkedin</p>
                     </Link>
                 </section>

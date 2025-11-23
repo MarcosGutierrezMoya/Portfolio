@@ -1,3 +1,5 @@
+'use client'
+
 import Nav from "../_componentes/Nav";
 import GamesVideos from "../_componentes/videogames/GamesVideos";
 

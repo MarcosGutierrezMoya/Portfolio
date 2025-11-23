@@ -27,7 +27,8 @@ function GamesVideos() {
     return (
         <div className="h-fit-content flex flex-col gap-24">
             <Panels setVideo={setVideo} />
-            <Videos url={video === "CrazyRacy" ? CrazyRacy : video === "Project_R" ? Project_R : video === "Time Wanderer" ? timeWanderer : video === "La Huida" ? laHuida : tercios} gameName={video} />
+            {/* <Videos url={video === "CrazyRacy" ? CrazyRacy : video === "Project_R" ? Project_R : video === "Time Wanderer" ? timeWanderer : video === "La Huida" ? laHuida : tercios} gameName={video} /> */}
+            <Videos url={video} gameName={video} />
         </div>
     )
 }

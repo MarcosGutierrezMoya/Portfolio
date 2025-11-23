@@ -14,7 +14,6 @@ type firebaseWebData = {
     url: string
 }
 
-
 const Projects = () => {
     const { setVideoGamesSection } = useGeneralContext()
     setVideoGamesSection("Web");
@@ -23,7 +22,7 @@ const Projects = () => {
 
     useEffect(() => {
         getWebData().then(data=>setWebData(data));
-
+        
     }, [])
     
 
@@ -32,7 +31,7 @@ const Projects = () => {
             {webData.map((project, i) => {
                 return (
                     <article key={project.id} className={`flex ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"} justify-around items-center w-full h-[40vh]`}>
-                        <Link href={`/web/${project.id}`} style={{ backgroundImage: `url('${project.url}.png')` }} className={`aspect-video w-[35vw] bg-no-repeat bg-cover block border-transparent border-[5px] border-solid hover:border-green-400`} />
+                        <Link href={`${project.data.link}`} target='_blank' style={{ backgroundImage: `url('${project.url}.png')` }} className={`aspect-video w-[35vw] bg-no-repeat bg-cover block border-transparent border-[5px] border-solid hover:border-green-400`} />
                         <section className='w-[50%] flex flex-col items-center justify-evenly h-[80%] text-center'>
                             <h1 className='text-lg'>{project.id}</h1>
                             <p>{project.data.description}</p>
