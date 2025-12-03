@@ -15,14 +15,12 @@ function GamesVideos() {
         setVideoGamesSection("Videogames");
     }, [video])
     
-    const laHuida = "-Qw_6BdbJxw?si=5UgzAHXC11OSmPHX";
-    const timeWanderer = "dM_VZsWmGsU?si=SLXPbrkcs1j8uxvz";
-    const Project_R = "I6s0tTGUkhA";
-    const CrazyRacy = "d2KrO30XLDg";
-    const tercios = "0kx5eu4qq7c";
-    
-    
-    
+    const laHuida = "La Huida";
+    const timeWanderer = "Time Wanderer";
+    const Project_R = "Project_R";
+    const CrazyRacy = "CrazyRacy";
+    const tercios = "Los tercios";
+        
 
     return (
         <div className="h-fit-content flex flex-col gap-24">
